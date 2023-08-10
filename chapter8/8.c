@@ -51,4 +51,71 @@
 //}
 
 
+
+//sizeof 연산자를 이용한 배열 처리 추가
+//int main()
+//{
+//	int score[5];
+//	int i;
+//	int total = 0;
+//	double avg;
+//	int count;
+//
+//	count = sizeof(score) / sizeof(score[0]); /* 배열 요소의 개수 = 배열 전체 바이트 / 배열 요소 1개당 바이트 */
+//
+//	for (i = 0; i < count; i++)
+//	{
+//		scanf("%d", &score[i]);
+//	}
+//
+//
+//	for (i = 0; i < count; i++)
+//	{
+//		total += score[i];
+//	}
+//
+//	avg = total / 5.0;
+//
+//	for (i = 0; i < 5; i++)
+//	{
+//		printf("%5d", score[i]);
+//	}
+//	printf("\n");
+//
+//	printf("평균: %.1lf", avg);
+//
+//	return 0;
+//}
  
+
+//8-1 확인문제3
+//int main()
+//{
+//	int A[3] = { 1,2,3 };
+//	int B[10];
+//	int i;
+//
+//	for (i = 0; i < 10; i++)
+//	{
+//		B[i] = A[i % 3]; //답지봄 ㅋ
+//	}
+//
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%5d", B[i]);
+//	}
+//	return 0;
+//}
+
+
+int main()
+{
+	char str[80] = "applejam";
+
+	printf("최초 문자열 : %s\n", str);
+	printf("문자열 입력 : ");
+	scanf("%s", str); //scanf에서 문자열을 받을때는 변수명 앞에 & 안붙여도 됨.
+	printf("입력 후 문자열 : %s\n", str);
+
+}
+
