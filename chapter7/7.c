@@ -171,25 +171,25 @@
 //1부터 n까지의 합을 재귀호출을 이용해 구하라.
 
 
-int rec_func(int n);
-
-
-int main(void)
-{
-
-	printf("%d", rec_func(10));
-
-
-	return 0;
-}
-
-int rec_func(int n) //n까지의 합
-{
-	if (n == 1) return 1;
-	else
-	{
-		return n + rec_func(n - 1); //재귀를 써서 n-1까지의 합에 n만을 계속 더해주는 방식.
-	}
-
-}
+//int rec_func(int n);
+//
+//
+//int main(void)
+//{
+//
+//	printf("%d", rec_func(10));
+//
+//
+//	return 0;
+//}
+//
+//int rec_func(int n) //n까지의 합
+//{
+//	if (n == 1) return 1;
+//	else
+//	{
+//		return n + rec_func(n - 1); //재귀를 써서 n-1까지의 합에 n만을 계속 더해주는 방식.
+//	}
+//
+//}
 
