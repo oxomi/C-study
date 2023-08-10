@@ -153,18 +153,49 @@
 
 
 //8-2 확인문제3
+//int main()
+//{
+//	char str1[80], str2[80];
+//	char temp[80];  //빈공간인 얘를 하나 더 추가해줘야 str1,2를 순차적으로 뒤집어갈 수 있음.
+//
+//	printf("두 문자열 입력 : ");
+//	scanf("%s %s", str1, str2);
+//	printf("바꾸기 전 : %s, %s\n", str1, str2);
+//	strcpy(temp, str1);
+//	strcpy(str1, str2);
+//	strcpy(str2, temp);
+//	printf("바꾼 후 : %s, %s\n", str1, str2);
+//
+//	return 0;
+//}
+
+
+
+//8-2 도전문제 (아스키코드를 이용해 더 간략히 짜는 방법 있던데 일단 그건 담에 할거임)
 int main()
 {
-	char str1[80], str2[80];
-	char temp[80];  //빈공간인 얘를 하나 더 추가해줘야 str1,2를 순차적으로 뒤집어갈 수 있음.
+	char str[80];
+	char small[80] = "abcdefghijklmnopqrstuvwxyz";
+	char big[80] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	int cnt = 0, i, j;
 
-	printf("두 문자열 입력 : ");
-	scanf("%s %s", str1, str2);
-	printf("바꾸기 전 : %s, %s\n", str1, str2);
-	strcpy(temp, str1);
-	strcpy(str1, str2);
-	strcpy(str2, temp);
-	printf("바꾼 후 : %s, %s\n", str1, str2);
+	printf("문장 입력 : ");
+	gets(str);
+
+	for (i = 0; i < 80; i++)
+	{
+		for (j = 0; j < 26; j++)
+		{
+			if (str[i] == big[j])
+			{
+				str[i] = small[j];
+				cnt++;
+			}
+		}
+	}
+	printf("바뀐 문장 :");
+	puts(str);
+	printf("바뀐 문자 수 : %d", cnt);
 
 	return 0;
 }
