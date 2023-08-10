@@ -138,15 +138,33 @@
 
 
 
+//int main()
+//{
+//	char str[80];
+//
+//	printf("문자열 입력 : ");
+//	gets(str);
+//	puts("입력된 문자열 : ");
+//	puts(str);
+//
+//	return 0;
+//}
+
+
+
+//8-2 확인문제3
 int main()
 {
-	char str[80];
+	char str1[80], str2[80];
+	char temp[80];  //빈공간인 얘를 하나 더 추가해줘야 str1,2를 순차적으로 뒤집어갈 수 있음.
 
-	printf("문자열 입력 : ");
-	gets(str);
-	puts("입력된 문자열 : ");
-	puts(str);
+	printf("두 문자열 입력 : ");
+	scanf("%s %s", str1, str2);
+	printf("바꾸기 전 : %s, %s\n", str1, str2);
+	strcpy(temp, str1);
+	strcpy(str1, str2);
+	strcpy(str2, temp);
+	printf("바꾼 후 : %s, %s\n", str1, str2);
 
 	return 0;
 }
-
