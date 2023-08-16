@@ -54,17 +54,24 @@
 
 
 
-int main()
-{
-	int a = 10, b = 20;
-	const int* pa = &a; //const의 역할 알기
+//int main()
+//{
+//	int a = 10, b = 20;
+//	const int* pa = &a; //const의 역할 알기
+//
+//	printf("변수 a 값 : %d\n", *pa);
+//	pa = &b;
+//	printf("변수 b 값 ; %d\n", *pa);
+//	pa = &a;
+//	a = 20;
+//	printf("변수 a 값 : %d\n", *pa);
+//
+//	return 0;
+//}
 
-	printf("변수 a 값 : %d\n", *pa);
-	pa = &b;
-	printf("변수 b 값 ; %d\n", *pa);
-	pa = &a;
-	a = 20;
-	printf("변수 a 값 : %d\n", *pa);
 
-	return 0;
-}
+
+
+
+
+
