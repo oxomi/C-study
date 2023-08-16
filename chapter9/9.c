@@ -119,33 +119,31 @@
 //	a = b;
 //	b = temp;
 //}
-
 //에러발생. 
 //이유 : 함수 안에 선언된 함수명은 사용 번위가 함수 내부로 제한되므로 main함수에 있는 변수 a, b는 다른 함수인 swap내에서 사용 불가.
 
 
 //A. 불가능 case 2) swap의 인수가 있을때
-void swap(int x, int y);
-
-int main()
-{
-	int a = 10, b = 20;
-
-	swap(a, b);
-	printf("a:%d, b:%d", a, b);
-
-	return 0;
-}
-
-void swap(int x, int y)
-{
-	int temp;
-
-	temp = x;
-	x = y;
-	y = temp;
-}
-
+//void swap(int x, int y);
+//
+//int main()
+//{
+//	int a = 10, b = 20;
+//
+//	swap(a, b);
+//	printf("a:%d, b:%d", a, b);
+//
+//	return 0;
+//}
+//
+//void swap(int x, int y)
+//{
+//	int temp;
+//
+//	temp = x;
+//	x = y;
+//	y = temp;
+//}
 //a, b값이 바뀌지 않음.
 //이유: swap 함수를 호출 할 때, main함수의 a, b값이 복사되어 swap함수의 x,y에 저장되므로 결국 swap함수 안에서는 a, b의 복사본을 바꾸는게 되기 때문에
 //정작 main함수의 a, b값은 바뀌지 않게 된다. swap함수의 매개변수 이름을 a, b로 바꾸얻 마찬가지다.
@@ -154,3 +152,45 @@ void swap(int x, int y)
 //A. 불가능 case 3) case 2에서 swap의 바꾼 값을 main함수로 반환하도록 수정했을때
 //애초에 불가능함.
 //이유: 함수는 오직 하나의 값만을 반환할 수 있기 떄분에 두개의 변화값을 반환할 수가 없다.
+
+
+
+//9-2 도전문제
+void swap(double* pa, double* pb);
+void line_up(double* maxp, double* midp, double* minp);
+
+int main()
+{
+	double max, mid, min;
+
+	printf("실수값 3개 입력 : ");
+	scanf("%lf%lf%lf", &max, &mid, &min);  //이름만 이렇게 지었지 큰 숫자 순서대로 입력받는거 아님.
+	line_up(&max, &mid, &min);
+	printf("정렬된 값 출력 : %.1lf, %.1lf, %.1lf\n", max, mid, min);
+
+	return 0;
+}
+
+void swap(double* pa, double* pb)
+{
+	double temp;
+
+	temp = *pa;
+	*pa = *pb;
+	*pb = temp;
+}
+
+void line_up(double* maxp, double* midp, double* minp)
+{
+	if (*maxp < *midp) swap(maxp, midp); // *붙여줘야하는부분 주의!
+	if (*maxp < *minp) swap(maxp, minp);
+	if (*midp < *minp) swap(midp, minp);
+}
+
+// 혹은 
+//if (*maxp < *midp) swap(maxp, midp); 
+//if (*midp < *minp) swap(midp, mi
+//if (*maxp < *midp) swap(maxp, minp); //이게 더 나은듯??
+
+
+// !!! 무턱대고 어렵게 생각했는데 알고보니 간단함. 직접 써보면서 간결한 로직을 찾으려는 버릇 들이자.
