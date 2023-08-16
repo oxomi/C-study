@@ -189,7 +189,7 @@ void line_up(double* maxp, double* midp, double* minp)
 
 // 혹은 
 //if (*maxp < *midp) swap(maxp, midp); 
-//if (*midp < *minp) swap(midp, mi
+//if (*midp < *minp) swap(midp, minp)
 //if (*maxp < *midp) swap(maxp, minp); //이게 더 나은듯??
 
 
